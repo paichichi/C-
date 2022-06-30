@@ -8,6 +8,21 @@ using namespace std;
 // 1.define常量
 #define day 7
 
+//结构体创建
+struct student {
+    string name;
+    int age;
+    int score;
+};
+
+struct teacher {
+    int id;
+    string name;
+    int age;
+    struct student stu;
+};
+
+
 void bubbleSorting(int * arrP, int len)
 {
     for (int i = 0; i < len - 1; i++) {
@@ -39,6 +54,28 @@ void arrayPrint2(int * arrP, int len)
 }
 
 int main() {
+
+
+    struct student arr[3] = {
+            {"张三", 18, 100},
+            {"李四", 20, 90},
+            {"王麻子", 22, 60}
+
+    };
+    struct student s1 = {"张三", 18, 100};
+    student * p = &s1;
+    cout << "name: " << p->name << "  age: " << p->age << "  scores: " << p->score << endl;
+
+    teacher t;
+    t.id = 10000;
+    t.name = "老王";
+    t.age = 50;
+    t.stu.name = "小王";
+    t.stu.age = 20;
+    t.stu.score = 60;
+
+
+
 
 
 
@@ -176,29 +213,29 @@ int main() {
 //    cout << a << endl;
 //    cout << *p << endl;
 
-      int arr[] = {1,2,3,4,5,6,7,8,9,10};
-
-      int * p = arr;
-      cout << "the first element in the array "<< *p << endl;
-
-    for (int i = 0; i < sizeof (arr)/sizeof (arr[0]); ++i) {
-        cout << p[i] << endl;
-    }
+//      int arr[] = {1,2,3,4,5,6,7,8,9,10};
 //
-//      int num = 112;
-//      char str = 'I';
-//      cout << (int)str << endl;
-//      cout << "the second element in the array  "<< *p << endl;
-      int arr2[] = {2,4,6,9,1,3,5,8,7,12,10,11,0};
-
-      //the length of array
-
-      int len = sizeof (arr2)/sizeof (arr2[0]);
-      arrayPrint1(arr2,len);
-      cout << endl;
-      bubbleSorting(arr2,len);
-      arrayPrint2(arr2,len);
-      cout << endl;
+//      int * p = arr;
+//      cout << "the first element in the array "<< *p << endl;
+//
+//    for (int i = 0; i < sizeof (arr)/sizeof (arr[0]); ++i) {
+//        cout << p[i] << endl;
+//    }
+////
+////      int num = 112;
+////      char str = 'I';
+////      cout << (int)str << endl;
+////      cout << "the second element in the array  "<< *p << endl;
+//      int arr2[] = {2,4,6,9,1,3,5,8,7,12,10,11,0};
+//
+//      //the length of array
+//
+//      int len = sizeof (arr2)/sizeof (arr2[0]);
+//      arrayPrint1(arr2,len);
+//      cout << endl;
+//      bubbleSorting(arr2,len);
+//      arrayPrint2(arr2,len);
+//      cout << endl;
 
 
 
